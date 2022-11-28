@@ -22,8 +22,7 @@ Constraints:
  */
 
 
-// Solution 1
-
+// Solution 1 - Set is used
 /**
  * @param {number[]} nums
  * @return {boolean}
@@ -31,3 +30,19 @@ Constraints:
 const containsDuplicate = nums => new Set(nums).size !== nums.length;
 
 containsDuplicate([1, 2, 3, 1]); // true
+
+// Solution 2 - object is used with for loop
+
+const containsDuplicate2 = nums => {
+    const obj = {}
+
+    for (let i = 0; i < nums.length; i++) {
+        const currentValue = nums[i]
+        if (obj[currentValue] !== undefined) return true
+        else obj[currentValue] = currentValue
+    }
+
+    return false
+};
+
+containsDuplicate2([1, 2, 3, 4]); // false
