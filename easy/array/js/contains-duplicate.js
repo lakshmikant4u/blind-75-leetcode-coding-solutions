@@ -74,3 +74,17 @@ const containsDuplicate4 = nums => {
 }
 
 containsDuplicate4([1, 3, 2, 4]); // false
+
+// Solution 5 Brute Force - Linear Search
+
+const containsDuplicate5 = function (nums) {
+    for (let i = 0; i < nums.length; i++) {
+        for (let j = 0; j < nums.length; j++) {
+            if (i == j) continue;
+            if (nums[i] == nums[j]) return true;
+        }
+    }
+    return false;
+};
+
+containsDuplicate5([1, 3, 2, 4]); // false
