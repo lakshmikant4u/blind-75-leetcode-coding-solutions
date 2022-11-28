@@ -49,3 +49,21 @@ const maxProfit = prices => {
 }
 
 console.log(maxProfit([7, 1, 5, 3, 6, 4])); // 5
+
+
+// Solution 2 with Math.min and Math.max functions
+
+const maxProfit2 = function (prices) {
+
+    let [curLowestBuyPrice, curProfit] = [Infinity, 0];
+
+    for (let stockPrice of prices) {
+        let [prevLowestBuy, prevProfit] = [curLowestBuyPrice, curProfit];
+        curLowestBuyPrice = Math.min(curLowestBuyPrice, stockPrice);
+        curProfit = Math.max(curProfit, stockPrice - prevLowestBuy);
+    }
+
+    return curProfit;
+};
+
+console.log(maxProfit2([7, 1, 5, 3, 6, 8])); // 7
