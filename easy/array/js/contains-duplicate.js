@@ -52,10 +52,10 @@ containsDuplicate2([1, 2, 3, 4]); // false
 const containsDuplicate3 = nums => {
     let map = new Map()
     for (let k of nums) {
-        if (map.get(k) === undefined) {
-            map.set(k, true)
-        } else {
+        if (map.has(k)) {
             return true
+        } else {
+            map.set(k, true)
         }
     }
     return false
