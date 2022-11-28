@@ -27,7 +27,7 @@ Constraints:
  * @param {number[]} nums
  * @return {boolean}
  */
-const containsDuplicate = nums => new Set(nums).size !== nums.length;
+const containsDuplicate = nums => new Set(nums).size !== nums.length; // or nums => nums.length > new Set(nums).size
 
 containsDuplicate([1, 2, 3, 1]); // true
 
