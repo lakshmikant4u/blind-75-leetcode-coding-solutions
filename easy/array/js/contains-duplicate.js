@@ -46,3 +46,19 @@ const containsDuplicate2 = nums => {
 };
 
 containsDuplicate2([1, 2, 3, 4]); // false
+
+// Solution 3 Map is used with for of
+
+const containsDuplicate3 = nums => {
+    let map = new Map()
+    for (let k of nums) {
+        if (map.get(k) === undefined) {
+            map.set(k, true)
+        } else {
+            return true
+        }
+    }
+    return false
+};
+
+containsDuplicate3([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]); // true
