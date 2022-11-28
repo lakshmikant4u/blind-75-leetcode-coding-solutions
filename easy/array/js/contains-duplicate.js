@@ -88,3 +88,16 @@ const containsDuplicate5 = function (nums) {
 };
 
 containsDuplicate5([1, 3, 2, 4]); // false
+
+// Solution 6 
+
+const containsDuplicate6 = nums => {
+    let set = new Set();
+    for (const num of nums) {
+        if (set.has(num)) return true;
+        set.add(num);
+    }
+    return false;
+};
+
+containsDuplicate5([1, 1, 3, 2, 4]); // true
