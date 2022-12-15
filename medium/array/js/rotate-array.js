@@ -37,3 +37,5 @@ const rotate1 = (nums, k) => nums.unshift(...nums.splice(-k % nums.length));
 rotate1(nums, k)
 console.log(nums)
 
+const rotate2 = (nums, k) => nums.push(...nums.splice(0, nums.length - k % nums.length));
+
