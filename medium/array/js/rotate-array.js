@@ -39,3 +39,19 @@ console.log(nums)
 
 const rotate2 = (nums, k) => nums.push(...nums.splice(0, nums.length - k % nums.length));
 
+const rotateByBounds = (nums, l, r) => {
+    while (l < r) {
+        [nums[l], nums[r]] = [nums[r], nums[l]];
+        l += 1;
+        r -= 1;
+    }
+};
+
+const rotate3 = (nums, k) => {
+    k = k % nums.length;
+
+    rotateByBounds(nums, 0, nums.length - 1);
+    rotateByBounds(nums, 0, k - 1);
+    rotateByBounds(nums, k, nums.length - 1);
+};
+
