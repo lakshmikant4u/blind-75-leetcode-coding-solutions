@@ -55,3 +55,13 @@ const rotate3 = (nums, k) => {
     rotateByBounds(nums, k, nums.length - 1);
 };
 
+const rotate4 = function (nums, k) {
+    k = k % nums.length;
+    const lastK = nums.slice(nums.length - k);
+    for (let i = nums.length - k - 1; i >= 0; i--) {
+        nums[i + k] = nums[i];
+    }
+    for (let i = 0; i < k; i++) {
+        nums[i] = lastK[i];
+    }
+};
