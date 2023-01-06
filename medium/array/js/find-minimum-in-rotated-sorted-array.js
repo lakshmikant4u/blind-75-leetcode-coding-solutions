@@ -51,3 +51,16 @@ const findMin = (nums) => {
 };
 
 console.log(findMin([3, 4, 5, 1, 2])) // 1
+
+// Solution 2 Brute Force
+
+var findMin2 = function (nums) {
+    for (i = 0; i < nums.length; i++) {
+        if (nums[i] > nums[i + 1]) {
+            return nums[i + 1]
+        }
+    }
+    return nums[0]
+};
+
+console.log(findMin([4, 5, 6, 7, 0, 1, 2])) // 0
