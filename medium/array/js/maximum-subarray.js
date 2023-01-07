@@ -57,3 +57,18 @@ const maxSubArray2 = (nums) => {
 
 console.log(maxSubArray2([5, 4, -1, 7, 8])) // 23
 
+// Solution 3 slight variation
+
+const maxSubArray3 = (nums) => {
+    let maxSoFar = nums[0];
+    let max = nums[0];
+
+    for (let i = 1; i < nums.length; i++) {
+        maxSoFar = Math.max(maxSoFar + nums[i], nums[i]);
+        max = Math.max(max, maxSoFar);
+    }
+
+    return max;
+};
+
+console.log(maxSubArray3([5, 4, -1, 7, 8])) // 23
