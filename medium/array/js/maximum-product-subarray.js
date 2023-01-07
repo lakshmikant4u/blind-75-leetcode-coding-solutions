@@ -42,3 +42,26 @@ const maxProduct = (nums) => {
 };
 
 console.log(maxProduct([2, 3, -2, 4])) // 6
+
+// Solution 2
+
+const maxProduct2 = (nums) => {
+    if (nums.length === 1) return nums[0];
+    let result = nums[0];
+    let max = result;
+    let min = result;
+
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] < 0) {
+            let temp = max;
+            max = min;
+            min = temp;
+        }
+        max = Math.max(nums[i], max * nums[i]);
+        min = Math.min(nums[i], min * nums[i]);
+        result = Math.max(result, max);
+    }
+    return result;
+};
+
+console.log(maxProduct2([2, 3, -2, 4])) // 6
