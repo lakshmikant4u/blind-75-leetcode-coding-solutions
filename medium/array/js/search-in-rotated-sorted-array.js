@@ -55,3 +55,21 @@ const search = (nums, target) => {
 
 console.log(search([4, 5, 6, 7, 0, 1, 2], 0)) // 4
 
+
+// Solution 2 Brute Force
+
+const search2 = (nums, target) => {
+    for (let i = 0; i < nums.length; i++) {
+        if (nums.includes(target)) {
+            if (nums[i] === target) {
+                return i
+            }
+        } else {
+            return -1
+        }
+    }
+};
+
+console.log(search2([4, 5, 6, 7, 0, 1, 2], 3)) // -1
+
+
